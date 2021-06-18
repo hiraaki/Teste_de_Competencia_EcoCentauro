@@ -1,0 +1,3 @@
+SELECT Name FROM STUDENTS /* Selecting the column Name*/
+WHERE Marks > 75 /* Removing Marks lower or equal tham 75 */
+order by RIGHT (Name, 3) asc, id asc;   /*Using two priorities to order, one by name and another by id*/

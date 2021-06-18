@@ -1,0 +1,25 @@
+#include <stdlib.h>
+
+long repeatedString(string s, long n) {
+    long a_count=0;     //Number of 'a's encountered in the string
+    long incompletdstrcount=0;  //Number of 'a's encountered in the substring remaning
+    
+    //finding how many times the string is repeted or not,
+    // and if there is a substring to add.
+    ldiv_t stringrepetitions = div(n,s.length());
+    
+    //counting the 'a's in the string and substring
+    for(int i=0;i<s.length(); i++){
+        if(s[i]=='a'){
+            a_count++;
+            if(i<stringrepetitions.rem){
+                incompletdstrcount++;
+            }
+        }
+    }
+    //Multipling the 'a's counter by the quotient, we have the number of 'a's whem the
+    // string is entirely repeated even if it wont repeat.
+    a_count = a_count*stringrepetitions.quot; 
+    
+    return a_count + incompletdstrcount; //return the sum of the two parts
+}
